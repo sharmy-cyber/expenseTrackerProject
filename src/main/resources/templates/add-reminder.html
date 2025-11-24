@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Reminder</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background: #eef2f7;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container form-container">
+
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Add New Reminder</h4>
+        </div>
+
+        <div class="card-body">
+
+            <form th:action="@{/api/reminders/create/{id}(id=${userId})}" th:object="${reminder}" method="post">
+
+                <!-- Message -->
+                <div class="mb-3">
+                    <label class="form-label">Reminder Message</label>
+                    <input type="text" class="form-control" th:field="*{message}" placeholder="Enter reminder message" required>
+                </div>
+
+                <!-- Date & Time -->
+                <div class="mb-3">
+                    <label class="form-label">Remind At</label>
+                    <input type="datetime-local" class="form-control" th:field="*{remindAt}" required>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="/api/reminders/view" class="btn btn-secondary">Back</a>
+                    <button type="submit" class="btn btn-success">Save Reminder</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
