@@ -28,7 +28,8 @@ public class SecurityConfig {
                                 "/css/**",
                                 "/js/**",
                                 "/images/**",
-                                "/user/verify-email")
+                                "/user/verify-email",
+                                "/verify")
                         .permitAll()
                         .anyRequest().authenticated())
                 .formLogin(form -> form

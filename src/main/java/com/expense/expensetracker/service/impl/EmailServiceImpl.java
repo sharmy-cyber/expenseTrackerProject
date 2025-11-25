@@ -18,7 +18,7 @@ import com.sendgrid.helpers.mail.objects.Email;
 
 import jakarta.mail.internet.MimeMessage;
 
-@Service
+/*@Service
 public class EmailServiceImpl implements EmailService {
 
     @Value("${sendgrid.api.key}")
@@ -78,9 +78,8 @@ public class EmailServiceImpl implements EmailService {
         }
     }
 }
+*/
 
-
-/*
 @Service
 public class EmailServiceImpl implements EmailService {
 
@@ -132,6 +131,6 @@ public class EmailServiceImpl implements EmailService {
         } catch (Exception e) {
             throw new RuntimeException("Failed to send email: " + e.getMessage());
         }
-    }*/
-
+    }
 }
+
