@@ -16,6 +16,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Category {
 
+    public Category(Object id2, String name2, String string) {
+        //TODO Auto-generated constructor stub
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
